@@ -1,9 +1,9 @@
 function norm=Norm(u,nx,ny)
   t = 0;
-  for(i = 1;i<=columns(nx);i++)
-    for(j = 1;j<=colums(ny);j++)
+  for i=1:nx
+    for j=1:ny
       t = t + pow2(u(i,j));
-    end for 
-  end for 
+    end 
+  end 
   norm = sqrt(t);
 end 
