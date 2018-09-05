@@ -4,7 +4,7 @@ function U = Seidel(Ax, Ay, Nx, Ny, h, Itmax, U)
 
 for k = 1:Itmax
 	for j = 2:Nx-1
-		y = Ax + j*h;
+		y = Ay + j*h;
 		for i = 2:Nx-1
 			x = Ax + i*h;
 			v = U(i+1,j) + U(i-1,j) + U(i,j+1) + U(i,j-1);
