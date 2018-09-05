@@ -1,7 +1,7 @@
 % procedimiento seidel
 function U = Seidel(Ax, Ay, Nx, Ny, h, Itmax, U)
 %i, j, k;
-
+U = zeros(Nx,Ny);
 for k = 1:Itmax
 	for j = 2:Ny-1
 		y = Ay + j*h;

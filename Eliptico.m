@@ -39,9 +39,6 @@ function u = Eliptico()
     y = a_y + j * h;
     for i = 1:n_x
       x = a_x + i * h;
-      #u(i,j) = TrueSolution(x, y) - u(i,j);
+      u(i,j) = abs(TrueSolution(x, y) - u(i,j));
     end
   end
-  
-  
-  
