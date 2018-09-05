@@ -3,7 +3,7 @@ function u = Eliptico()
   #i,j;
   n_x = 8;
   n_y = 8;
-  itmax = 20;
+  itmax = 75;
   #real
   #h,x,y;
   a_x = 0.0;
@@ -33,12 +33,13 @@ function u = Eliptico()
   end
   #output
   u = Seidel(a_x, a_y, n_x, n_y, h, itmax, u);
+  #printf("%d", u);
   #output
   for j = 1: n_y
     y = a_y + j * h;
     for i = 1:n_x
       x = a_x + i * h;
-      #u(i,j) = |True_Solution(x, y) - u(i,j)|;
+      u(i,j) = abs(TrueSolution(x, y) - u(i,j));
     end
   end
   
