@@ -3,7 +3,7 @@ function U = Seidel(Ax, Ay, Nx, Ny, h, Itmax, U)
 %i, j, k;
 
 for k = 1:Itmax
-	for j = 2:Nx-1
+	for j = 2:Ny-1
 		y = Ay + j*h;
 		for i = 2:Nx-1
 			x = Ax + i*h;

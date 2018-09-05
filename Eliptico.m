@@ -1,9 +1,9 @@
 function u = Eliptico()
   #integer
   #i,j;
-  n_x = 8;
-  n_y = 8;
-  itmax = 75;
+  n_x = 9;
+  n_y = 9;
+  itmax = 20;
   #real
   #h,x,y;
   a_x = 0.0;
@@ -16,12 +16,12 @@ function u = Eliptico()
   
   for j = 1:n_y
     y = a_y + j*h;
-    u(1:j) = Bndy(a_x, y);
+    u(1,j) = Bndy(a_x, y);
     u(n_x, j) =Bndy(b_x, y);
    end
    for i = 1:n_x
     x = a_x + i*h;
-    u(i:1) = Bndy(x, a_y);
+    u(i,1) = Bndy(x, a_y);
     u(i, n_y) = Bndy(x, b_y);
    end
   for j = 2:n_y-1
@@ -32,14 +32,14 @@ function u = Eliptico()
     end  
   end
   #output
-  u = Seidel(a_x, a_y, n_x, n_y, h, itmax, u);
+  #u = Seidel(a_x, a_y, n_x, n_y, h, itmax, u);
   #printf("%d", u);
   #output
   for j = 1: n_y
     y = a_y + j * h;
     for i = 1:n_x
       x = a_x + i * h;
-      u(i,j) = abs(TrueSolution(x, y) - u(i,j));
+      #u(i,j) = abs(TrueSolution(x, y) - u(i,j));
     end
   end
   
